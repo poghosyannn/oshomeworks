@@ -1,0 +1,38 @@
+Pointers
+Assignment 1: Basics of Pointers
+    Objective: Understand the basics of pointers, the address-of operator, and dereferencing.
+    Task:
+        Declare an integer variable and initialize it with a value.
+        Declare a pointer variable that points to the integer.
+        Print the address of the integer variable using both the variable and the pointer.
+        Modify the value of the integer using the pointer and print the new value.
+
+Assignment 2: Pointer Arithmetic
+    Objective: Learn how pointer arithmetic works.
+    Task:
+        Declare an array of integers and initialize it with 5 values.
+        Use a pointer to traverse the array and print each element.
+        Modify the values of the array using pointer arithmetic.
+        Print the modified array using both the pointer and the array name.
+        
+Assignment 3: Pointers and Functions
+    Objective: Learn how to pass pointers to functions.
+    Task:
+        Write a function swap(int *a, int *b) that swaps two integer values using pointers.
+        In the main() function, call swap() and pass the addresses of two integers.
+        Print the values of the integers before and after the swap.
+
+Assignment 4: Pointers to Pointers
+    Objective: Work with double pointers.
+    Task:
+        Declare an integer variable and a pointer to that variable.
+        Declare a pointer to the pointer and initialize it.
+        Print the value of the integer using both the pointer and the double-pointer.
+
+Assignment 5: Strings and Character Pointers
+    Objective: Work with pointers to characters and string manipulation.
+    Task:
+        Declare a string as a character array: char str[] = "Hello";.
+        Declare a pointer to the first character of the string.
+        Print the string using the pointer and a loop (without using str[i]).
+        Count the number of characters in the string using pointer arithmetic.
