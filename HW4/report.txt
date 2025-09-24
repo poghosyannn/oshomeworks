@@ -1,0 +1,55 @@
+arshakp@ubuntu-aua-os:~/oshomeworks/HW4$ nm main.o
+return:
+0000000000000000 T main
+                 U printf
+                 U square
+T indicates that the main is defined and U indicates that printf and square are not
+
+arshakp@ubuntu-aua-os:~/oshomeworks/HW4$ nm math_utils.o
+returns:
+0000000000000000 T square
+And  T for square being defined
+
+arshakp@ubuntu-aua-os:~/oshomeworks/HW4$ nm square_prog
+returns
+For nm square_prog, we got:
+0000000000001149 T main
+                	  U printf@GLIBC_2.2.5
+000000000000118c T square
+
+T for main and square defined and U for printf not defined
+
+—-----------------------------—-----------------------------—-----------------------------—---------------------------
+
+arshakp@ubuntu-aua-os:~/oshomeworks/HW4$ objdump -d main.o
+arshakp@ubuntu-aua-os:~/oshomeworks/HW4$ objdump -d math_utils.o
+arshakp@ubuntu-aua-os:~/oshomeworks/HW4$ objdump -d square_prog
+
+
+
+
+My reasoning around the final output: 
+
+In the object files (main.o and math_utils.o), the assembly only shows our functions. In main.o, calls to square and printf are unresolved placeholders, while in math_utils.o the full code for square is present. In the final executable (square_prog), these calls are resolved: square has a real address and printf is connected through the PLT. The executable also includes extra system code - the underscore stuff.
+
+—-----------------------------—-----------------------------—-----------------------------—---------------------------
+
+arshakp@ubuntu-aua-os:~/oshomeworks/HW4$ readelf -h main.o
+arshakp@ubuntu-aua-os:~/oshomeworks/HW4$ readelf -h math_utils.o
+arshakp@ubuntu-aua-os:~/oshomeworks/HW4$ readelf -h square_prog
+​​arshakp@ubuntu-aua-os:~/oshomeworks/HW4$ readelf -S main.o
+arshakp@ubuntu-aua-os:~/oshomeworks/HW4$ readelf -S math_utils.o
+arshakp@ubuntu-aua-os:~/oshomeworks/HW4$ readelf -S square_prog
+
+
+
+The object files main.o and math_utils.o are relocatable (REL) and cannot run by themselves. They only contain basic sections like .text, .data, .bss, .rodata, and symbol tables. The final executable square_prog is a position independent executable (DYN) and has an entry point address. It contains many extra sections such as .interp, .plt, .got, .dynamic, and .init_array which are needed for dynamic linking and execution. This shows that linking combines relocatable files and adds runtime information to create a complete executable.
+
+—-----------------------------—-----------------------------—-----------------------------—---------------------------
+
+Final Summary
+
+In the object files, main.o defines main and references square and printf as undefined symbols, while math_utils.o defines square. In the final executable square_prog, both main and square are defined, and printf is linked dynamically through the C library.
+The object files only contain basic sections such as .text, .data, .bss, .rodata, and symbol tables. The final executable has many more sections including .interp, .plt, .got, and .dynamic which are required for dynamic linking and program startup.
+The linking process combines the object files, resolves undefined symbols across them, and connects external functions like printf to system libraries. This transforms simple relocatable files into a complete executable ready to run.
+
