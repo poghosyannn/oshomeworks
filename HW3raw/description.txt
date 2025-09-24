@@ -1,0 +1,39 @@
+ Processes
+Assignment 1: Basic Process Creation with fork()
+    Objective: Understand process creation using fork().
+    Task:
+        Write a program that creates a child process using fork().
+        The child process should print its PID and exit.
+        The parent process should print its own PID without waiting for the child to complete.
+        Use getpid() to print the PIDs of both the parent and child processes.
+
+Assignment 2: Using wait() and waitpid()
+    Objective: Learn how to use wait() and waitpid() for process synchronization.
+    Task:
+        Modify the program from Assignment 1 to use wait() in the parent process to wait for the child process to complete.
+        Add another child process using fork(), and use waitpid() in the parent to wait for a specific child process to finish first.
+        Print the exit status of the child processes using the status code returned by wait() and waitpid().
+
+Assignment 3: Understanding atexit()
+    Objective: Learn how to use the atexit() function for process cleanup.
+    Task:
+        Write a program that registers two functions using atexit().
+        The functions should print messages when the program terminates.
+        Test the program by calling exit() in different locations and observing the order of function calls.
+        Explain how atexit() can be useful in real-world applications.
+
+Assignment 4: Fork and Exit Status
+    Objective: Handle multiple processes and their exit statuses.
+    Task:
+        Write a program that creates two child processes using fork().
+        Each child process should return a different exit code using exit().
+        The parent process should use waitpid() to wait for each child and print their exit status.
+        Print whether each child exited normally or with an error.
+
+Assignment 5: Handling Zombie Processes
+    Objective: Demonstrate zombie processes and prevent them from using wait().
+    Task:
+        Write a program that creates a child process but does not use wait() in the parent.
+        Use the  htop, top  or ps commands to observe the child process becoming a zombie.
+        Modify the program to use wait() in the parent to prevent the child from becoming a zombie.
+        Explain how wait() and waitpid() prevent zombie processes.
