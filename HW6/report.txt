@@ -1,0 +1,8 @@
+Ex1:
+Different types have different alignments. Larger types are stored at addresses divisible by their size for faster access.
+
+Ex2:
+A padding is added between fields when we use structs, to keep alignment. Changing field order reduces wasted space.
+
+Ex3:
+#pragma pack(1) removes padding, making the struct smaller but possibly slower to access.
