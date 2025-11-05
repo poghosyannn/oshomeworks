@@ -6,3 +6,5 @@ A padding is added between fields when we use structs, to keep alignment. Changi
 
 Ex3:
 #pragma pack(1) removes padding, making the struct smaller but possibly slower to access.
+
+https://github.com/poghosyannn/oshomeworks
