@@ -1,0 +1,40 @@
+Report
+Task 1:
+
+Copies the content from one file to another using read() and write() functions. The first file
+is opened in a read-only mode and the second file is opened in a write mode, with create/truncate
+flags. At the end, the total number of bytes is printed.
+
+Task 2:
+
+Creates a file.txt data, then writes teh alphabet inside it. Then truncates it to the fist 10 
+byes, using the ftruncate() function and prints the new size and the remaining content.
+
+Task 3:
+
+This program reads and prints a file’s content in reverse order. It uses lseek() to move backward
+ one byte at a time and writes the characters in reverse to standard output.
+
+Reads and prints a given file's content in reverse. Uses lseek() to move backward on each byte and writes
+each charecter in reverse. 
+
+Task 4:
+
+Uses O_APPEND mode to append each entry log to the log.txt file, with the current process Id.
+Then uses lseek() to show the resulting file offset.
+
+Task 5:
+
+Starts with writing "START", goes forward by 1 MiB, then writes "END", creating a 
+sparse file that is large in logical size but which is small in actual disk usage.
+
+Task 6:
+
+Creates a file with numbers from 1 to 10 written on consecutive lines. Then replaces the fouth
+line with "100" by reading the lines, modifying one of them, truncating the file and rewriting the
+resulting content.
+
+Task 7:
+
+Opens and comapres two different files. If the files are identical, a message "The files are identical" is 
+printed. If they are not, repors the first differin byte index.

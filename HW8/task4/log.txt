@@ -1,0 +1,2 @@
+PID=1687724: salam
+PID=1687987: bariereko
