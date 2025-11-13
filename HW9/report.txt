@@ -1,0 +1,14 @@
+Assignment 1:
+The program starts three threads. Each thread prints a message showing that it is running. The main program waits for all threads to finish before exiting.
+Assignment 2:
+The array is split into two parts. Each thread calculates the sum of its own part. This shows how threads can work on different sections of the same data.
+Assignment 3:
+Three threads print numbers from 1 to 5. Since the threads run at the same time, the order of the numbers can change every time the program runs.
+Assignment 4:
+Each number in the array gets its own thread. Every thread prints the square of the number it receives. This shows simple parallel work where each thread does a small independent task.
+
+https://github.com/poghosyannn/oshomeworks
+
+
+
+
